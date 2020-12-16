@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'org.testng', name: 'testng', version: '7.0.0'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+}
+
+test {
+    useTestNG()
+}
+
+test {
+    filter {
+
+
+        //include all tests from package
+        includeTestsMatching "ru.stqa.pft.addressbook.tests*"
+
+
+    }
+}
